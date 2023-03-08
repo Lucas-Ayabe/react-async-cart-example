@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Mona Sans", Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+header {
+  margin-bottom: 1em;
+}
+
+header h1 {
+  margin-bottom: 0.5em;
+}
+
+button {
+  border: none;
+  background: #333;
+  color: #eee;
+  cursor: pointer;
+
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1em;
+  white-space: nowrap;
+  padding: 0.75em 0.5em;
+
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #444;
+}
+
+button:active {
+  background: #555;
+}
+
+.container {
+  width: min(calc(100% - 2em), 70em);
+  padding-block: 3em;
+  margin-inline: auto;
+}
+
+.flow > * + * {
+  margin-top: 1em;
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+  align-items: start;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+}
+
+.product {
+  position: relative;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 2px dotted #000;
+}
+
+.product.disabled {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.product .price {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-block: 0.5em;
+}
+
+.cart-items {
+  list-style: none;
+}
+
+.cart-items > * + * {
+  margin-top: 1em;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  border-top: 1px solid #000;
+  margin-top: 1rem;
+  padding-top: 1rem;
+
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: rgb(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.modal {
+  background: #fff;
+
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.modal :is(.header, .content) {
+  padding: 1em;
+}
+
+.modal .header {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.modal .content {
+  padding-bottom: 2.5em;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
